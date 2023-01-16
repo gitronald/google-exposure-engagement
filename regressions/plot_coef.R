@@ -36,7 +36,7 @@ theme_bw()+
 theme(plot.title = element_text(size = 14, face = "bold"),
      strip.text = element_text(face = "bold"))
 ggsave(partisan_unreliable_plot, 
-       file = paste0(dir_main, "figures/coef_plot_meta_pid_unreliable.png"), 
+       file = paste0(dir_main, "outputs/figures/coef_plot_meta_pid_unreliable.png"), 
        width = 10, height = 6)
 
 # Plot coefficients for extended data: Strong Party ID, partisan news
@@ -68,7 +68,7 @@ theme_bw()+
 theme(plot.title = element_text(size = 14, face = "bold"),
      strip.text = element_text(face = "bold"))
 ggsave(partisan_slant_plot, 
-       file = paste0(dir_main, "figures/coef_plot_meta_pid_slant.png"), 
+       file = paste0(dir_main, "outputs/figures/coef_plot_meta_pid_slant.png"), 
        width = 10, height = 6)
 
 # Plot coefficients for extended data: Age, unreliable news
@@ -100,7 +100,7 @@ theme_bw()+
 theme(plot.title = element_text(size = 14, face = "bold"),
      strip.text = element_text(face = "bold"))
 ggsave(age_unreliable_plot, 
-       file = paste0(dir_main, "figures/coef_plot_meta_age_unreliable.png"), 
+       file = paste0(dir_main, "outputs/figures/coef_plot_meta_age_unreliable.png"), 
        width = 10, height = 6)
 
 # Plot coefficients for extended data: Age, partisan slant
@@ -132,5 +132,5 @@ theme_bw()+
 theme(plot.title = element_text(size = 14, face = "bold"),
      strip.text = element_text(face = "bold"))
 ggsave(age_slant_plot, 
-       file = paste0(dir_main, "figures/coef_plot_meta_age_slant.png"), 
+       file = paste0(dir_main, "outputs/figures/coef_plot_meta_age_slant.png"), 
        width = 10, height = 6)

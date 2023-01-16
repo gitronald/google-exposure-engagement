@@ -16,7 +16,7 @@ options("modelsummary_format_numeric_latex" = "plain")
 set.seed(11111)
 
 dir_main = "/home/rer/proj/gssurvey/notebooks/final/"
-dir_tables = paste0(dir_main, "tables/regressions/")
+dir_tables = paste0(dir_main, "outputs/tables/regressions/")
 
 source(paste0(dir_main, "/regressions/helper_functions.R"))
 

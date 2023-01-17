@@ -458,7 +458,7 @@ mutate(Outcome = "Partisan Slant")
 bind_rows(pid_age_n_stack, pid_age_n_stack_bias) %>%
 pivot_wider(names_from = c("Behavior", "Year"),
             values_from = "N") %>%
-write.csv(paste0(dir_main, "data/pid_age_n_by_behavior.csv"))
+write.csv(paste0(dir_main, "outputs/tables/pid_age_n_by_behavior.csv"))
 
 # ==============================================================================
 # Save coefficients table
@@ -544,7 +544,7 @@ names(group_n_comb) <- c("Group","N_2018","N_2020")
 # arrange and write to file
 group_n_comb %>%
 slice(c(1:4, 10, 8, 6, 5, 7, 9, 11)) %>%
-write.csv(file = paste0(dir_main, "data/n_table.csv"))
+write.csv(file = paste0(dir_main, "outputs/tables/n_table.csv"))
 
 # ==============================================================================
 # Save Gini table
@@ -559,5 +559,5 @@ gini_table <- data.frame(Year = rep(c("2018","2020"), each = 3),
                                   round(dineq::gini.wtd(dat_2020$activity_gs_follow_n_fake_either[!is.na(dat_2020$activity_gs_follow_window)]),3), 
                                   round(dineq::gini.wtd(dat_2020$browser_history_n_fake_either[!is.na(dat_2020$browser_history_window)]),3))) 
 
-write.csv(gini_table, file = paste0(dir_main, "data/gini_table.csv"))
+write.csv(gini_table, file = paste0(dir_main, "outputs/tables/gini_coefs.csv"))
 

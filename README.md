@@ -19,7 +19,7 @@ follows, and overall engagement -- and have prefixes to delineate among them.
 Please see the Methods section of the paper for additional details and context  
 on each measure. 
 
-`data/users2018`  
+`data/users2018.csv`  
 - Provides user-level aggregated data for participants from our 2018 study wave.  
 Each row represents a participant and has a unique identifier in the `caseid`  
 column that we've replaced with an autoincrement integer value in this dataset.  
@@ -28,7 +28,7 @@ The column prefixes for distinguishing datatypes are `search_` for exposure,
 of overall engagement is provided in columns prefixed with `history_`, representing  
 participants' complete Google History.
 
-`data/users2020`  
+`data/users2020.csv`  
 - Provides user-level aggregated data for participants from our 2020 study wave.  
 Each row represents a participant and has a unique identifier in the `user_id`  
 column that we've replaced with an autoincrement integer value in this dataset.  
@@ -36,6 +36,11 @@ The column prefixes for distinguishing datatypes are `activity_gs_search_` for
 exposure, `activity_gs_follow_` for follows, and `browser_history_` for overall  
 engagement.  A secondary measure of overall engagement is provided in columns  
 prefixed with `activity_`, representing participants' complete Tab Activity.  
+
+`data/tabs_stack.csv`  
+- Provides regression coefficients, 95% CIs, *t* values, and *P*-values for  
+the main regression analysis. Used in `figure_coefficients.ipynb` and  
+`table_coefficients.ipynb`.  
 
 <br>
 
@@ -70,6 +75,20 @@ file are not publicly available because only aggregated data may be released.
 <br>
 
 ---
+## Regressions
+
+The regression analysis was done using the R scripts in `regressions/`. Below  
+we list each with a brief description.
+
+`regressions/run_analysis.R`  
+- Run regression models and produce associated output  
+
+`regressions/helper_functions.R`  
+- Helper functions for regression modeling and organizing output  
+
+<br>
+
+---
 ## Search Queries - Pivoted Text Scaling
 
 We used pivoted text scaling to identify features in our participants' search  
@@ -78,26 +97,8 @@ text data needed to regenerate these scores, below we list each script and
 a brief description.
 
 `pivot_scores/make_parrot_scores.R`  
-- TODO: brief description  
-
+- Creates pivoted text scaling scores from participants' search queries  
 
 `pivot_scores/parrot_functions.R`  
-- TODO: brief description  
-
-<br>
-
----
-## Regressions
-
-The regression analysis was done using the R scripts in `regressions/`. Below we  
-list each with a brief description.
-
-`regressions/run_analysis.R`  
-- TODO: brief description
-
-
-`regressions/helper_functions.R`  
-- TODO: brief description  
-
-
+- Pivoted text scaling helper functions and pipeline  
 

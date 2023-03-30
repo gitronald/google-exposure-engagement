@@ -54,7 +54,7 @@ def save_xsv(df, fp, index=False, kwargs={}):
         print(f'file not found: {fp}')
 
 
-def load_feather(fp, head=False)
+def load_feather(fp, head=False):
     df = pd.read_feather(fp)
     print(f"loaded: {fp} - {dfshape(df)}")
     if head: dfhead(df)

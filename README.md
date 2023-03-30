@@ -7,6 +7,8 @@ news on Google Search.
 To run the code available here, you will first need to download all of the code  
 and data, which is available at: https://doi.org/10.7910/DVN/WANAX3  
 
+<br>
+
 ---
 ## Datasets
 
@@ -26,7 +28,7 @@ The column prefixes for distinguishing datatypes are `search_` for exposure,
 of overall engagement is provided in columns prefixed with `history_`, representing  
 participants' complete Google History.
 
-`data/users2018`  
+`data/users2020`  
 - Provides user-level aggregated data for participants from our 2020 study wave.  
 Each row represents a participant and has a unique identifier in the `user_id`  
 column that we've replaced with an autoincrement integer value in this dataset.  
@@ -34,6 +36,8 @@ The column prefixes for distinguishing datatypes are `activity_gs_search_` for
 exposure, `activity_gs_follow_` for follows, and `browser_history_` for overall  
 engagement.  A secondary measure of overall engagement is provided in columns  
 prefixed with `activity_`, representing participants' complete Tab Activity.  
+
+<br>
 
 ---
 ## Jupyter Notebooks
@@ -63,6 +67,8 @@ results that we further edited by hand to produce Extended Data Tables 4-7.
 partisan news exposure, follows, and engagement. The data needed to run this  
 file are not publicly available because only aggregated data may be released.  
 
+<br>
+
 ---
 ## Search Queries - Pivoted Text Scaling
 
@@ -77,6 +83,8 @@ a brief description.
 
 `pivot_scores/parrot_functions.R`  
 - TODO: brief description  
+
+<br>
 
 ---
 ## Regressions

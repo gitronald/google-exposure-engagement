@@ -4,6 +4,7 @@ Functions used in jupyter notebooks to load, reshape, format, and conduct
 tests for statistical significance.
 
 """
+import os
 import json
 import itertools
 import numpy as np
@@ -20,12 +21,50 @@ def read_json(fp):
         return json.load(infile)
 
 
-def load_tsv(fp, head=False, **kwargs):
-    """Shortcut to pd.read_csv(..., sep='\t') and displaying details"""
-    df = pd.read_csv(fp, sep='\t', **kwargs)
+def load_xsv(fp, kwargs={}):
+    """Load a tsv or csv file"""
+    if os.path.exists(fp):
+        if fp.endswith('.tsv'):
+            sep = '\t'
+        elif fp.endswith('.csv'):
+            sep = ','
+        else:
+            raise ValueError('file must be .tsv or .csv')
+        
+        df = pd.read_csv(fp, sep=sep, **kwargs)
+        print(f'loaded: {fp} - {dfshape(df)}')
+        return df
+    else:
+        print(f'file not found: {fp}')
+
+def save_xsv(df, fp, index=False, kwargs={}):
+    """Save a tsv or csv file"""
+    if os.path.exists(fp):
+        if fp.endswith('.tsv'):
+            sep = '\t'
+        elif fp.endswith('.csv'):
+            sep = ','
+        else:
+            raise ValueError('file must be .tsv or .csv')
+        
+        df.to_csv(fp, sep=sep, index=index, **kwargs)
+        print(f'saved: {fp} - {dfshape(df)}')
+        return df
+    else:
+        print(f'file not found: {fp}')
+
+
+def load_feather(fp, head=False)
+    df = pd.read_feather(fp)
     print(f"loaded: {fp} - {dfshape(df)}")
     if head: dfhead(df)
     return df
+
+
+def save_feather(df, fp, head=False):
+    df.reset_index(drop=True).to_feather(fp)
+    print(f"saved: {fp} - {dfshape(df)}")
+    if head: dfhead(df)
 
 
 def dfshape(df):
@@ -37,6 +76,12 @@ def dfshape(df):
 def dfhead(df, n=3):
     display(df.head(n))
     print()
+
+
+def dfprefix(df, prefix="", ignore=[]):
+    """Add a prefix to a dataframe's column names"""
+    cols = {col: col if col in ignore else f"{prefix}{col}" for col in df}
+    return df.rename(columns=cols)
 
 
 def get_nonzero_min(col):

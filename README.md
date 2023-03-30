@@ -47,10 +47,10 @@ the main regression analysis. Used in `figure_coefficients.ipynb` and
 ---
 ## Jupyter Notebooks
 
-The bulk of the analysis was done using jupyter notebooks, which we list below  
-along with brief descriptions. These notebooks import shared utility functions  
-from the `functions.py` file, including for reformatting data, adjusting plots,  
-and calculating statistics. 
+The descriptive analysis was done primarly in jupyter notebooks, which we list  
+below along with brief descriptions. These notebooks import shared utility  
+functions from `functions.py` for reformatting data, adjusting plots, and  
+calculating statistics.  
 
 `main_results.ipynb`:  
 - This notebook contains descriptive analyses for 2018 and 2020 data. It creates  
@@ -63,9 +63,10 @@ Supplementary Information.
 in `run_analysis.R`.  
 
 `table_coefficients.ipynb`:  
-- This notebook loads and reshapes regression coefficients, CIs, and P-values  
-produced in `run_analysis.R`. It outputs a latex tables of formatted regression  
-results that we further edited by hand to produce Extended Data Tables 4-7.  
+- This notebook loads and reshapes the regression coefficients, CIs, t-values,  
+and P-values produced in `run_analysis.R`. It outputs a latex tables of  
+formatted regression results that we further edited by hand to produce  
+Extended Data Tables 4-7.  
 
 `figure_individual_level.ipynb`:  
 - This notebook loads, reshapes, and plots participant-level distributions of  
@@ -78,7 +79,7 @@ file are not publicly available because only aggregated data may be released.
 ## Regressions
 
 The regression analysis was done using the R scripts in `regressions/`. Below  
-we list each with a brief description.
+we list each script with a brief description.
 
 `regressions/run_analysis.R`  
 - Run regression models and produce associated output  
@@ -92,8 +93,8 @@ we list each with a brief description.
 ## Search Queries - Pivoted Text Scaling
 
 We used pivoted text scaling to identify features in our participants' search  
-queries using the R scripts in `pivot_scores/`. Though we do not provide the   
-text data needed to regenerate these scores, below we list each script and  
+queries using the R scripts in `pivot_scores/`. We do not provide the text  
+data needed to regenerate these scores. Below we list each script with 
 a brief description.
 
 `pivot_scores/make_parrot_scores.R`  

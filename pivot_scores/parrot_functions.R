@@ -1,6 +1,7 @@
 # pivot scaling helper functions and pipeline
 
-get_keywords_custom <- function (scores, n_dimensions, n_words = 15, stretch = 3, capture_output = FALSE, 
+get_keywords_custom <- function (scores, n_dimensions, n_words = 15, 
+                                 stretch = 3, capture_output = FALSE, 
                                  pivots_only = TRUE, topic) 
 {
   all_keywords <- list()
@@ -12,22 +13,22 @@ get_keywords_custom <- function (scores, n_dimensions, n_words = 15, stretch = 3
   else {
     n_dimensions
   }) {
-    general_keywords <- scores$vocab[order(scores$pivot_scores[, 
-                                                               i + 1] * sqrt(rowSums(scores$pivot_scores[, -1]^2)), 
-                                           decreasing = TRUE)]
-    specific_keywords <- scores$vocab[order(scores$word_scores[, 
-                                                               i + 1]^(stretch) * sqrt(rowSums(scores$pivot_scores[, 
-                                                                                                                   -1]^2)), decreasing = TRUE)]
+    general_keywords <- scores$vocab[order(
+      scores$pivot_scores[, i + 1] * sqrt(rowSums(scores$pivot_scores[, -1]^2)), 
+      decreasing = TRUE)]
+    specific_keywords <- scores$vocab[order(
+      scores$word_scores[, i + 1]^(stretch) * sqrt(rowSums(scores$pivot_scores[,-1]^2)), 
+      decreasing = TRUE)]
     if (pivots_only) {
-      keywords <- data.frame(head(rev(general_keywords), 
-                                  n = n_words), head(general_keywords, n = n_words))
+      keywords <- data.frame(head(rev(general_keywords), n = n_words), 
+                             head(general_keywords, n = n_words))
       names(keywords) <- c("pivots (-)", "(+) pivots")
     }
     else {
-      keywords <- data.frame(head(rev(specific_keywords), 
-                                  n = n_words), head(rev(general_keywords), n = n_words), 
-                             head(general_keywords, n = n_words), head(specific_keywords, 
-                                                                       n = n_words))
+      keywords <- data.frame(head(rev(specific_keywords), n = n_words), 
+                             head(rev(general_keywords), n = n_words), 
+                             head(general_keywords, n = n_words), 
+                             head(specific_keywords, n = n_words))
       names(keywords) <- c("scores (-)", "pivots (-)", 
                            "(+) pivots", "(+) scores")
     }
@@ -53,8 +54,9 @@ get_keywords_custom <- function (scores, n_dimensions, n_words = 15, stretch = 3
 }
 
 # function to plot pivot scaling results
-plot_keywords_custom <- function (scores, x_dimension = 1, y_dimension = 2, q_cutoff = 0.9, 
-                                  plot_density = FALSE, unstretch = FALSE, color = FALSE,
+plot_keywords_custom <- function (scores, x_dimension = 1, y_dimension = 2,
+                                  q_cutoff = 0.9, plot_density = FALSE, 
+                                  unstretch = FALSE, color = FALSE,
                                   subjname = "subject"){
     require(ggrepel)
   if (unstretch) {
@@ -108,15 +110,17 @@ plot_keywords_custom <- function (scores, x_dimension = 1, y_dimension = 2, q_cu
     return(g)
   }
   else {
-    gridExtra::grid.arrange(g, ggplot2::ggplot() + 
-                              ggplot2::geom_density(ggplot2::aes(x = word_scores[, x_dimension])) +
-                              ggplot2::xlab(paste("Dimension:", x_dimension - 1)) + 
-                              ggplot2::theme_classic(), 
-                            ggplot2::ggplot() + 
-                              ggplot2::geom_density(ggplot2::aes(x = word_scores[,  y_dimension])) + 
-                              ggplot2::xlab(paste("Dimension",  y_dimension - 1)) + 
-                              ggplot2::theme_classic(), 
-                            layout_matrix = rbind(c(1, 1, 2), c(1, 1, 3)))
+    gridExtra::grid.arrange(g, 
+      ggplot2::ggplot() + 
+        ggplot2::geom_density(ggplot2::aes(x = word_scores[, x_dimension])) +
+        ggplot2::xlab(paste("Dimension:", x_dimension - 1)) + 
+        ggplot2::theme_classic(), 
+      ggplot2::ggplot() + 
+        ggplot2::geom_density(ggplot2::aes(x = word_scores[,  y_dimension])) + 
+        ggplot2::xlab(paste("Dimension",  y_dimension - 1)) + 
+        ggplot2::theme_classic(), 
+      layout_matrix = rbind(c(1, 1, 2), c(1, 1, 3))
+    )
   }
 }
 

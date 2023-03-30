@@ -1,4 +1,4 @@
-## CODE FOR SUPPLY/DEMAND FOR PARTISAN AND FAKE NEWS IN SEARCH
+# Make parrot scores
 setwd("/")
 
 message("loading packages and defining helper functions...\n")
@@ -72,7 +72,7 @@ message("reading 2020 data...")
 # 2020 next
 dat20 <- readr::read_tsv("/net/data/yougov/webusage/data/qualtrics/user/active.tsv")
 serps20 <- readr::read_tsv("/net/data/yougov/webusage/data/qualtrics/activity/google_search/serp_summary.tsv")
-meta20 <- readr::read_csv("home/jongreen/search_stuff/survey_ids_timing.csv")
+meta20 <- readr::read_csv("/home/jongreen/search_stuff/survey_ids_timing.csv")
 
 # make output df
 wave_meta <- meta20 %>%

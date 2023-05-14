@@ -39,8 +39,8 @@ prefixed with `activity_`, representing participants' complete Tab Activity.
 
 `data/tabs_stack.csv`  
 - Provides regression coefficients, 95% CIs, *t* values, and *P*-values for  
-the main regression analysis. Used in `figure_coefficients.ipynb` and  
-`table_coefficients.ipynb`.  
+the main regression analysis. Produced in `regressions/run_analysis.R` and  
+used in `figure_coefficients.ipynb` and `table_coefficients.ipynb`.  
 
 <br>
 

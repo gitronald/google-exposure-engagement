@@ -6,6 +6,7 @@ matplotlib==3.7.1
 numpy==1.24.3
 packaging==23.1
 pandas==1.4.3
+patsy==0.5.3
 Pillow==9.5.0
 pyparsing==3.0.9
 python-dateutil==2.8.2
@@ -13,3 +14,4 @@ pytz==2023.3
 scipy==1.8.1
 seaborn==0.12.2
 six==1.16.0
+statsmodels==0.14.0

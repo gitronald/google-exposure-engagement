@@ -37,7 +37,7 @@ exposure, `activity_gs_follow_` for follows, and `browser_history_` for overall
 engagement.  A secondary measure of overall engagement is provided in columns  
 prefixed with `activity_`, representing participants' complete Tab Activity.  
 
-`data/tabs_stack.csv`  
+`data/coefficients.csv`  
 - Provides regression coefficients, 95% CIs, *t* values, and *P*-values for  
 the main regression analysis. Produced in `regressions/run_analysis.R` and  
 used in `figure_coefficients.ipynb` and `table_coefficients.ipynb`.  

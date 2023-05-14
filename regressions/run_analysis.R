@@ -526,7 +526,7 @@ left_join(bind_rows(pid_age_n_stack, pid_age_n_stack_bias),
                  "behavior" = "Behavior",
                  "year" = "Year",
                 "outcome" = "Outcome")) %>%
-write.csv(file = paste0(dir_main, "data/tabs_stack.csv"))
+write.csv(file = paste0(dir_main, "data/coefficients.csv"))
 
 
 

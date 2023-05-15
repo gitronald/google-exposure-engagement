@@ -4,8 +4,13 @@ This repository contains code and data for replicating the main findings in a
 forthcoming paper on exposure and engagement with partisan and unreliable  
 news on Google Search.
 
-To run the code available here, you will first need to download all of the code  
-and data, which is available at: https://doi.org/10.7910/DVN/WANAX3  
+To run the code available here, you will first need to clone this repo and download the data.  
+
+To clone this code repository, run the following command in your terminal:  
+`git clone https://github.com/gitronald/google-exposure-engagement.git`
+
+To download the data, visit https://doi.org/10.7910/DVN/WANAX3 and save the  
+dataset to a directory called "data" within the cloned code repository.
 
 <br>
 

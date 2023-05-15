@@ -1,16 +1,16 @@
 # Replication Materials
 
-This repository contains code and data for replicating the main findings in a  
-forthcoming paper on exposure and engagement with partisan and unreliable  
-news on Google Search.
+This repository contains code for replicating the main findings in "Users  
+choose to engage with more partisan news than they are exposed to on Google  
+Search," a forthcoming paper on exposure and engagement with partisan and  
+unreliable news on Google Search.  
 
-To run the code available here, you will first need to clone this repo and download the data.  
-
-To clone this code repository, run the following command in your terminal:  
-`git clone https://github.com/gitronald/google-exposure-engagement.git`
-
-To download the data, visit https://doi.org/10.7910/DVN/WANAX3 and save the  
-dataset to a directory called "data" within the cloned code repository.
+To run the code in this repository, you need to:  
+1. Clone this repository  
+   `git clone https://github.com/gitronald/google-exposure-engagement.git`  
+2. Download the datasets by visiting https://doi.org/10.7910/DVN/WANAX3  
+   and saving the dataset to a directory "data" within the cloned repository.  
+3. Use the Jupyter Notebooks section below to navigate the pipeline.
 
 <br>
 
@@ -22,7 +22,7 @@ the `data` directory. Some columns have been removed to protect participant
 privacy. These datasets contain  merged columns from all datatypes -- exposure,  
 follows, and overall engagement -- and have prefixes to delineate among them.  
 Please see the Methods section of the paper for additional details and context  
-on each measure. 
+on each measure.  
 
 `data/users2018.csv`  
 - Provides user-level aggregated data for participants from our 2018 study wave.  

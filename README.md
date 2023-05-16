@@ -15,14 +15,18 @@ preprint: https://arxiv.org/abs/2201.00074
 ---
 ## Getting Started  
 
+The datasets needed to run this code are included in this repository, and are  
+documented in the [Datasets](#datasets) section below. These datasets are also  
+available on Dataverse (https://doi.org/10.7910/DVN/WANAX3)
+
 To run the code in this repository, you need to:  
 1. Clone this repository  
    `git clone https://github.com/gitronald/google-exposure-engagement.git`  
-2. Download the datasets by visiting https://doi.org/10.7910/DVN/WANAX3  
-   and saving the dataset to a directory "data" within the cloned repository.  
-3. Use the Jupyter Notebooks section below to navigate the pipeline.
-
-
+2. Follow the instructions for running each replication resource in the sections below:  
+   [Descriptive Analysis](#descriptive-analysis) : Main descriptive analysis in jupyter notebooks  
+   [Regression Analysis](#regression-analysis) : Regression analysis and plotting in R and jupyter notebooks  
+   [Search Queries](#search-queries---pivoted-text-scaling) : Pivoted text scaling in R  
+   
 <br>
 
 ---
@@ -62,7 +66,7 @@ used in `figure_coefficients.ipynb` and `table_coefficients.ipynb`.
 <br>
 
 ---
-## Jupyter Notebooks
+## Descriptive Analysis
 
 The descriptive analysis was done primarly in jupyter notebooks, which we list  
 below along with brief descriptions. These notebooks import shared utility  
@@ -75,6 +79,27 @@ the figures that appear in the main manuscript (excluding the diagram in Figure 
 the figures and tables that appear in Extended Data, and the tables that appear in  
 Supplementary Information.  
 
+`figure_individual_level.ipynb`:  
+- This notebook loads, reshapes, and plots participant-level distributions of  
+partisan news exposure, follows, and engagement. The data needed to run this  
+file are not publicly available because only aggregated data may be released.  
+
+<br>
+
+---
+## Regression Analysis
+
+The regression analysis was done using the R scripts in `regressions/`, and the  
+plots were made using jupyter notebooks. Below we list each script and notebook  
+with a brief description.  
+
+`regressions/run_analysis.R`  
+- Run regression models and produce associated output  
+
+`regressions/helper_functions.R`  
+- Helper functions for regression modeling and organizing output  
+
+
 `figure_coefficients.ipynb`:  
 - This notebook loads, reshapes, and plots regression coefficients and CIs produced  
 in `run_analysis.R`.  
@@ -85,24 +110,6 @@ and P-values produced in `run_analysis.R`. It outputs a latex tables of
 formatted regression results that we further edited by hand to produce  
 Extended Data Tables 4-7.  
 
-`figure_individual_level.ipynb`:  
-- This notebook loads, reshapes, and plots participant-level distributions of  
-partisan news exposure, follows, and engagement. The data needed to run this  
-file are not publicly available because only aggregated data may be released.  
-
-<br>
-
----
-## Regressions
-
-The regression analysis was done using the R scripts in `regressions/`. Below  
-we list each script with a brief description.
-
-`regressions/run_analysis.R`  
-- Run regression models and produce associated output  
-
-`regressions/helper_functions.R`  
-- Helper functions for regression modeling and organizing output  
 
 <br>
 

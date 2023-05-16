@@ -3,7 +3,17 @@
 This repository contains code for replicating the main findings in "Users  
 choose to engage with more partisan news than they are exposed to on Google  
 Search," a forthcoming paper on exposure and engagement with partisan and  
-unreliable news on Google Search.  
+unreliable news on Google Search. The collected data types and our metrics   
+for exposure, engagement, and follows are described in detail in the paper.  
+
+full paper: https://doi.org/10.1038/s41586-023-06078-5  
+preprint: https://arxiv.org/abs/2201.00074  
+
+
+<br>
+
+---
+## Getting Started  
 
 To run the code in this repository, you need to:  
 1. Clone this repository  
@@ -12,17 +22,19 @@ To run the code in this repository, you need to:
    and saving the dataset to a directory "data" within the cloned repository.  
 3. Use the Jupyter Notebooks section below to navigate the pipeline.
 
+
 <br>
 
 ---
 ## Datasets
 
-User-level aggregated data for replicating our main findings are available in  
-the `data` directory. Some columns have been removed to protect participant   
-privacy. These datasets contain  merged columns from all datatypes -- exposure,  
-follows, and overall engagement -- and have prefixes to delineate among them.  
-Please see the Methods section of the paper for additional details and context  
-on each measure.  
+User-level aggregated data for replicating our main findings must be downloaded  
+from https://doi.org/10.7910/DVN/WANAX3 and placed in a `data` directory within  
+the cloned repository. Some columns have been removed to protect participant  
+privacy. These datasets contain merged columns from all datatypes -- exposure,  
+follows, and overall engagement -- and have prefixes to delineate among them,  
+which we provide and explain for each dataset below. Please see the Methods  
+section of the paper for additional details and context on each measure.  
 
 `data/users2018.csv`  
 - Provides user-level aggregated data for participants from our 2018 study wave.  
@@ -40,7 +52,7 @@ column that we've replaced with an autoincrement integer value in this dataset.
 The column prefixes for distinguishing datatypes are `activity_gs_search_` for  
 exposure, `activity_gs_follow_` for follows, and `browser_history_` for overall  
 engagement.  A secondary measure of overall engagement is provided in columns  
-prefixed with `activity_`, representing participants' complete Tab Activity.  
+prefixed with `activity_`, representing participants' Tab Activity.  
 
 `data/coefficients.csv`  
 - Provides regression coefficients, 95% CIs, *t* values, and *P*-values for  
@@ -99,8 +111,9 @@ we list each script with a brief description.
 
 We used pivoted text scaling to identify features in our participants' search  
 queries using the R scripts in `pivot_scores/`. We do not provide the text  
-data needed to regenerate these scores. Below we list each script with 
-a brief description.
+data needed to regenerate these scores. Additional details on pivoted text  
+scaling and how we applied it to search queries are available in the paper.  
+Below we list each R script with a brief description.  
 
 `pivot_scores/make_parrot_scores.R`  
 - Creates pivoted text scaling scores from participants' search queries  

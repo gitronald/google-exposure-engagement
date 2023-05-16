@@ -15,7 +15,7 @@ preprint: https://arxiv.org/abs/2201.00074
 ---
 ## Getting Started  
 
-The datasets needed to run this code are included in this repository, and are  
+The datasets needed to run this code are included in this repository and are  
 documented in the [Datasets](#datasets) section below. These datasets are also  
 available on Dataverse (https://doi.org/10.7910/DVN/WANAX3).
 
@@ -94,10 +94,10 @@ plots were made using jupyter notebooks. Below we list each script and notebook
 with a brief description.  
 
 `regressions/run_analysis.R`  
-- Run regression models and produce associated output  
+- Run regression models and produce associated output.  
 
 `regressions/helper_functions.R`  
-- Helper functions for regression modeling and organizing output  
+- Helper functions for regression modeling and organizing output.  
 
 
 `figure_coefficients.ipynb`:  
@@ -123,8 +123,8 @@ scaling and how we applied it to search queries are available in the paper.
 Below we list each R script with a brief description.  
 
 `pivot_scores/make_parrot_scores.R`  
-- Creates pivoted text scaling scores from participants' search queries  
+- Creates pivoted text scaling scores from participants' search queries.  
 
 `pivot_scores/parrot_functions.R`  
-- Pivoted text scaling helper functions and pipeline  
+- Pivoted text scaling helper functions and pipeline.  
 

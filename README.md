@@ -17,7 +17,7 @@ preprint: https://arxiv.org/abs/2201.00074
 
 The datasets needed to run this code are included in this repository, and are  
 documented in the [Datasets](#datasets) section below. These datasets are also  
-available on Dataverse (https://doi.org/10.7910/DVN/WANAX3)
+available on Dataverse (https://doi.org/10.7910/DVN/WANAX3).
 
 To run the code in this repository, you need to:  
 1. Clone this repository  
